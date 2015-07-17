@@ -1,0 +1,166 @@
+{! glas ~ wave -> 0 !}
+As far as I am concerned this is an ANTI-FRAMEWORK TO KILL ALL FRAMEWORKS.
+
+
+Haha! Not really but let me explain.
+
+There is an Esoteric Kind of Viewpoint that is Attached to this Thing here I am 
+ talking about
+ 
+Let me examine the Current Web Frameworks.
+
+Basically All Current Web Framework comes in Three things that Define what an App;lication is
+
+*Model, View, Controller :: All the rest
+*Model, Template, View :: Django
+
+Let us examine this as a Pattern and Produce another Pattern.
+
+Let us `Poof! Have .a. car .. for example
+
+* Car, Driver/User, Engine, Interior and Exterior, and What's being Driven around / Passengers
+
+those are not that important but let's keep what's important Uppercased
+
+For instance Let us re0arrange so that Car and Engine are at the front, since we are Software Engineers, right? Ok.
+Please notice that, This is Pattern's speaking, so no classes are to be created and/or Constructed. This is just talk, ok?
+
+* Car, Engine, driver/user, Interior and Exterior, Passengers/ What's being driven around
+
+Let's see... hmmm as an Engineer I need Car and Engine, and a Driver...
+The what's driven is not so important 
+
+But Let's Package that into a nice series of Lines
+
+Application Framework =>
+    Car, Engine, driver/user, interior and exterior, passengers.
+
+Interesting... No models have been mentioned but that's OK because We are not modeling right now, we are _patterning_ *PATTERNS*
+
+Interestingly enough Engine is INSIDE of the CAR
+Interestingly enough Engine is INSIDE of the CAR
+Interestingly enough Engine is INSIDE of the CAR
+
+That could be expressed by the Sentence::
+    C[ar] =has_structure=> { Engine, interior, passengers }
+        or in other words
+    C .has: E[ngine]
+    C .has: interior * not important but hey, who cares
+    
+    or even the shorter version
+    C / E @@ has?yes.
+
+But on the other hand it is entirely possible ONE ENGINE to be A CAR for another CAR, get it? 
+
+Do you understand now the Exo-teric structure and the Esso-teric structure...
+
+All good things comes in Fives, so let's see now.. hmm...
+
+From the outside to the inside and then Wham! from the Outside to another Outside... just a moment please...
+
+CAR, Car.Engine, driver, InteriorAndExterior, What's Driven, and poor Passengers
+CAR, Car.Engine, Car.driver?, Car.Interior And CAR.Exterior, CAR.WhatDriven, and poor Passengers
+
+CAR .is. {
+    Car
+    Car.Engine
+    Car.Driver? Person * a Non-essential User.
+    Interior !And Exterior ... NOT! This for removal here, but is Essential
+    Car.Passengers * Essential Users.
+    Car.WhatsDriven ... NOT! This has no place here, but is Essential
+}
+Now let's Map out Relationships between the different objects here
+Let's see from the Perspective of the Driver, he's the most connected Entity in
+ our Relationship mess
+ 
+Driver .is. _a_ Non-Essential User
+Driver .drives. CAR
+Driver .drives: _the_ Car .through. Car.SteeringWheel
+
+Driver .drives. _the_ Car .through. Car.SteeringWheel .which. is Connected to the Engine
+Driver .drives: Car -> Engine # this is a good line but has a mistake
+Driver .drives: Car -> CAR.Engine # this is a good line but has a mistake
+
+...
+After many lines this doesn't look good... But let's see...
+If I Hop on the back of a Man and use His Ears as Steering Wheels I can Immagine that this Man, Myself, and His Ears are a Car and Passengers
+
+What's beeing Driven into your HEad here is that A CAR for one could be Seen as 
+ an Engine, FGiven that -=What'sBeingDriven=- is -=Well Defined=- and the User and Passengers are Treated nicely
+ 
+~.~
+
+CAR
+CAR.ENGINE
+
+Exo-teric Fiver:
+1. CAR? { Car, Car.Engine, ..., Car.drivenBy, ...}
+2. ENGINE? -= ( Another Car, no What's driving everything )=-
+3. WHAT'S DRIVEN? {Data, Codec, Cookie}
+4. Who's Driving it? Users/Driver
+5. Other? Yes there was another Point.. InteriorExterior this is Glue Basically
+
+Esoteric Triplette:
+N  Term             Other names                         Questions
+1. Model??          n/a? classes? objects?              What's Being Driven?
+2. Controller??     views/django? presenter? whatever?  Who's Driving it?
+3. View??           templates/django?                   Where/How does it :Look like? nope.
+
+Exotericc Fiver Again:
+N  Name             Question                    Notes
+1. Car/CAR          What's Being Driven         Element 1 from the Outside
+2. Car.Engine       What's Essential and is     Element 2 from the Inside
+                    Inside                      
+3. Drvr.andDriven   WHERE AND WHO has
+                    Driver and the Driven...    ELEMENT 3 ESSENTIAL inside from the inside
+4. Passangers/Data
+5. Driven.Outside
+
+CAR, ENGINE, Driver, InteriorAndExteriorGlue, DATA_What's_Being_Driven_FORMAT, and poor DATAPassengersDATA_CODECSorry this is Bad idea but let's try it out
+
+~.~
+
+Exoteric Pattern {
+    CAR         Structure.
+    ENGINE      Inner Essential Structure.
+    GLUE        Neither Inner Nor Outter Structure, has to be saved/used sparingly
+    DATA_FORMAT WHAT DATA is being Pumped through this CAR. *_FORMAT is unessential wording here. DATA is BETTER
+    DATA_CODECS How is DATA being Pumped through this CAR. Codecs? Yes Codecs. Reader/Writers? Yes. DATA_* is unessential wording here. CODECS is BETTER
+}
+
+Essoteric Pattern {
+    MODEL       Model/Django
+    VIEW        Templates/Django
+    CONTROLLER  Views/Django
+}
+
+~.~
+{{ WebAlbums Patterns Here-Now, wave ~ 1 }}
+
+MODEL?          None. Just Pure Python classes an optional @api func decorator. :: webalbum/core.py
+VIEW?           FLASK's Jinja Templates :: webalbum/simple/app.py
+CONTROLLER?     FLASK's view functions :: webalbum/simple/app.py
+
+Pattern-ing {
+    What        Where               ::Insides                   *Notes
+    CAR         webalbum/albums.py  :: WebAlbum class..&[2]     * A Simple Class
+    ENGINE      webalbum/core.py    :: ! To be upgraded into proper package soon. on demand!
+    GLUE        webalbum/mundate/*
+    DATA_FROMAT webalbum/data/formats.py :: ?
+    DATA_CODECS webalbum/data/codecs.py :: ?
+}
+
+
+::Notes??
+
+2: 
+
+This Applicatin (WebAlbum will be described as such.
+
+::Used Materials??
+    https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller 
+    https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter
+    
+{! glas ~ Docs ~ Stop ~ Cleaning ->> 0 !}
+
+`bhdz! <: please: Clean !up_And Dither *this Text File ditheriiiiing
