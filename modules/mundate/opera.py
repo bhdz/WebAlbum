@@ -19,39 +19,6 @@ def echo(something, **context):
     print something
     return 1
 
-def walk_path(path, filters = None, **options):
-    filtered = []
-        
-    only_files = False
-    if 'only_files' in options:
-        only_files = options['only_files']
-    
-    def filter_check(path):
-        if len(filters) < 1:
-            return True
-        for filt in filters:
-            m = fnmatch.fnmatch(path, filt)
-            if True == m:
-                return True
-        return False
-    
-    for (path, subdirs, files) in os.walk(path):
-        for filename in files:
-            filepath = os.path.join(path, filename)
-            if filter_check(filepath):
-                filtered.append(filepath) 
-        
-        if not only_files:
-            for dirname in subdirs:
-                dirpath = os.path.join(path, dirname)
-                filtered.append(dirpath)
-
-    return filtered
-
-def check_walk_path():
-    pass
-
-
 #
 # Walks a path (directory) and returns files
 #    returns? Filtered Content
@@ -60,8 +27,10 @@ def check_walk_path():
 #        filters?
 #        only_files?
 #
-def walk_path2(path, **constraints):
+def walk_path(path, **constraints):
     """ walk_path :: path -> {constraints} -> filtered[]"""
+    echo("walk_path! -> matching! -> [filtered file-info]")
+    
     filtered = []
 
     filters = []
